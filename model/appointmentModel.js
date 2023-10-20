@@ -4,11 +4,22 @@ const Schema = mongoose.Schema;
 const appointmentModel = new mongoose.Schema({
     patient:{
         type:Schema.Types.ObjectId,
-        ref: "patients",
+        ref: "Patient",
     },
     doctor:{
         type:Schema.Types.ObjectId,
-        ref:"doctors"
+        ref:"Doctor",
+    },
+    bookingDate:{
+        type:String,
+        require:true
+    },
+    TimeSlot:{
+        type:String,
+        require:true,
+    },
+    appointmentDiseases:{
+        type:String,
     },
     appointmentStatus:{
         type:String,

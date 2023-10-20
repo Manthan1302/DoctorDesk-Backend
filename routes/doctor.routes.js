@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const adminAuth = require("../middleware/adminAuth");
 const { addDoctor, doctorSignin, updateDoctor, allDoctors, deleteDoctors } = require("../controller/doctor.controller");
-
+const doctorAuth = require("../middleware/doctorAuth");
 //doctor Routes
 router.post("/doctor/doctorSignin", doctorSignin);
-router.put("/updateDoctors/:id", updateDoctor);
+router.put("/updateDoctors/:id", doctorAuth,updateDoctor);
 
 
 //admin Routes
