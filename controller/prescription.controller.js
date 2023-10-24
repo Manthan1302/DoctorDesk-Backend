@@ -100,7 +100,7 @@ const makePrescription = () => {
     const invoicePDf = async () => {
         try {
             let result = await easyinvoice.createInvoice(data);
-            fs.writeFileSync(`./invoice${Date.now()}.pdf`,
+            fs.writeFileSync(`./prescriptions/invoice${Date.now()}.pdf`,
                 result.pdf, 'base64')
         } catch (error) {
             console.log('error',error);
@@ -110,5 +110,5 @@ const makePrescription = () => {
     invoicePDf()
 }
 
-makePrescription()
-// module.exports = { makePrescription }
+// makePrescription()
+module.exports = { makePrescription }

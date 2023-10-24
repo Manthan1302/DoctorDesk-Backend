@@ -7,14 +7,15 @@ const patientRouter = require("./routes/patient.routes");
 const doctorRouter = require("./routes/doctor.routes");
 const appointmentRouter = require("./routes/appointments.routes");
 const adminRouter = require("./routes/admin.routes");
+const prescriptionRouter = require("./routes/prescription.routes");
+
 app.use(cors());
 app.use(express.json())
 app.use(patientRouter);
 app.use(doctorRouter);
 app.use(appointmentRouter);
 app.use(adminRouter);
-
-
+app.use(prescriptionRouter);
 
 
 
